@@ -10,7 +10,7 @@ services:
         condition: service_started
     restart: always
     environment:
-      DB_HOST: db
+      DB_HOST: 172.20.0.10
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
