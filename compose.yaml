@@ -30,12 +30,14 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_HOST: "%"
     env_file:
       - .env
     ports:
     - "3306:3306"
     volumes:
       - ./data/mysql_data:/var/lib/mysql
+      - ./mysql_conf/enable-mysql-native-password.cnf:/etc/mysql/conf.d/enable-mysql-native-password.cnf
     networks:
       backend:
         ipv4_address: 172.20.0.10
